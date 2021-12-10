@@ -4,8 +4,6 @@ function MedicalTreatmentList(props) {
   const treatmentsJson = props.string;
   const medicalTreatmentsArray = JSON.parse(treatmentsJson);
 
-  const [box, setBox] = React.useState('');
-
   const listMedicalTreats = medicalTreatmentsArray.map((item) => (
     <li>
       Record {item.treatId} details:
@@ -24,9 +22,8 @@ function MedicalTreatmentList(props) {
     </li>
   ));
 
-  const filtering = medicalTreatmentsArray
-    .filter((m) => m.category.includes('Nurse'))
-    .map((filteredElement) => (
+  const filtering = medicalTreatmentsArray.filter((m) 
+  => m.category.includes('Nurse')).map((filteredElement) => (
       <li>
         Treat ID: {filteredElement.treatId}
         <br />
